@@ -77,6 +77,9 @@ function getSegMap(task){
   return arr;
 }
 function renderPara(p, task){
+  if(p.startsWith('<strong>') || p.startsWith('<em ')){
+    return `<p class="para">${p}</p>`;
+  }
   let remaining = p;
   let out = '';
   const segs = getSegMap(task);
